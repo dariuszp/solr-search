@@ -1,0 +1,4 @@
+solr
+====
+
+Small solr client
