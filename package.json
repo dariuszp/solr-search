@@ -7,6 +7,9 @@
         "type": "git",
         "url": "git://github.com/dariuszp/solr.git"
     },
+    "dependencies": {
+        "colog": ">= 0.1.8"
+    },
     "main": "index.js",
     "bin": "bin/solr.js",
     "keywords": [
