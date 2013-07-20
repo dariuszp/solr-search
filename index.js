@@ -16,13 +16,15 @@ request.get(simpleSelect, function (data) {
 });*/
 
 var solr = require('./lib/solr');
+
 solr.addClient('dariuszp');
 
 var dc = solr.getClient('dariuszp');
-dc.on('hello', function () {
-    console.log('world');
+
+dc.on('ready', function (collection) {
+    collection.deleteById(2, function (id) {
+        console.log('DELETED ' + id);
+    });
 });
 
-dc.getCollection('dariuszp', function () {
-    console.log('READY!');
-});
+dc.getCollection('dariuszp');
