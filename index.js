@@ -15,16 +15,25 @@ request.get(simpleSelect, function (data) {
     colog.dump(JSON.parse(data), ['red', 'bgWhite', 'bold']);
 });*/
 
-var solr = require('./lib/solr');
+var solr = require('./lib/solr'),
+    colog = require('colog');
 
 solr.addClient('dariuszp');
 
 var dc = solr.getClient('dariuszp');
 
 dc.on('ready', function (collection) {
-    collection.deleteById(2, function (id) {
-        console.log('DELETED ' + id);
-    });
+//    collection.add([
+//        { id: 1, title: 'Hello' },
+//        { id: 2, title: 'Big' },
+//        { id: 3, title: 'World' }
+//    ], function (entities, data) {
+//        colog.dump(data, ['green']);
+//    });
+
+//    collection.deleteByQuery('*:*');
+
+//    collection.deleteById(2);
 });
 
 dc.getCollection('dariuszp');
