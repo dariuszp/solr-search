@@ -7,11 +7,15 @@
         "type": "git",
         "url": "git://github.com/dariuszp/solr.git"
     },
+    "devDependencies": {
+        "colog": ">= 0.1.8"
+    },
     "main": "index.js",
     "bin": "bin/solr.js",
     "keywords": [
         "solr",
-        "client"
+        "client",
+        "search"
     ],
     "license": "MIT"
 }
