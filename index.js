@@ -1,5 +1,7 @@
 'use strict';
 
+module.exports = require('./lib/solr');
+
 /*
 var request = require('./lib/request'),
     colog = require('colog');
@@ -15,23 +17,23 @@ request.get(simpleSelect, function (data) {
     colog.dump(JSON.parse(data), ['red', 'bgWhite', 'bold']);
 });*/
 
-var solr = require('./lib/solr'),
-    colog = require('colog');
-
-solr.addClient('dariuszp');
-
-var dc = solr.getClient('dariuszp');
-
-dc.getCollection('dariuszp', function (collection) {
-    collection.select().query('*:*', {
-        fq: 'title:Hello',
-        fl: ['title'],
-        sort: { 'id': 'ASC' },
-        'success': function (se) {
-            console.log(se.docs());
-        },
-        'error': function (err) {
-            console.log(err.toString());
-        }
-    });
-});
+//var solr = require('./lib/solr'),
+//    colog = require('colog');
+//
+//solr.addClient('dariuszp');
+//
+//var dc = solr.getClient('dariuszp');
+//
+//dc.getCollection('dariuszp', function (collection) {
+//    collection.select().query('*:*', {
+//        fq: 'title:Hello',
+//        fl: ['title'],
+//        sort: { 'id': 'ASC' },
+//        'success': function (se) {
+//            console.log(se.docs());
+//        },
+//        'error': function (err) {
+//            console.log(err.toString());
+//        }
+//    });
+//});
