@@ -22,18 +22,16 @@ solr.addClient('dariuszp');
 
 var dc = solr.getClient('dariuszp');
 
-dc.on('ready', function (collection) {
-//    collection.add([
-//        { id: 1, title: 'Hello' },
-//        { id: 2, title: 'Big' },
-//        { id: 3, title: 'World' }
-//    ], function (entities, data) {
-//        colog.dump(data, ['green']);
-//    });
-
-//    collection.deleteByQuery('*:*');
-
-//    collection.deleteById(2);
+dc.getCollection('dariuszp', function (collection) {
+    collection.select().query('*:*', {
+        fq: 'title:Hello',
+        fl: ['title'],
+        sort: { 'id': 'ASC' },
+        'success': function (se) {
+            console.log(se.docs());
+        },
+        'error': function (err) {
+            console.log(err.toString());
+        }
+    });
 });
-
-dc.getCollection('dariuszp');
