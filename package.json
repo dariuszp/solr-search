@@ -1,6 +1,6 @@
 {
     "name": "solr-search",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "author": "Półtorak Dariusz <poltorak.dariusz@gmail.com>",
     "description": "Small solr client",
     "repository": {
