@@ -1,4 +1,4 @@
-solr-search v0.1.0
+solr-search v0.1.2
 ====
 
 Small solr client
